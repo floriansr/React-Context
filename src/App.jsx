@@ -1,32 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 
-// import StateContext from "components/StateContext";
+import CounterContext from "components/CounterContext";
 
 import Child from "components/Child";
 import OtherChild from "components/OtherChild";
 
 const App = () => {
-	// const [name, setName] = useState("test");
+	const [currentNumber, setCurrentNumber] = useState(0);
 
 	return (
-		<>
+		<CounterContext.Provider
+			value={{
+				currentNumber,
+				increment: () => setCurrentNumber(currentNumber + 1),
+				decrement: () => setCurrentNumber(currentNumber - 1),
+			}}
+		>
 			<Child />
+
 			<OtherChild />
-		</>
+		</CounterContext.Provider>
 	);
 };
 
 export default App;
-
-// <StateContext.Provider state={name}>
-// 	<OtherChild />
-// </StateContext.Provider>
-
-// <label>
-// 	State :
-// 	<input
-// 		type="text"
-// 		onChange={(e) => setName(e.target.value)}
-// 		placeholder="Looking for name?"
-// 	/>
-// </label>
