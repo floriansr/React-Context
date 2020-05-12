@@ -14,8 +14,8 @@
 	},
 
 	"parser": "babel-eslint",
-	"extends": ["airbnb", "prettier", "prettier/react"],
 	"plugins": ["prettier"],
+	"extends": ["airbnb", "prettier", "prettier/react"],
 	"rules": {
 		"react/jsx-props-no-spreading": ["off"],
 		"no-console": ["off"],

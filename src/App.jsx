@@ -1,18 +1,32 @@
-import React, { useState, useEffect } from "react";
-import Example from "components/Example";
+import React from "react";
+
+// import StateContext from "components/StateContext";
+
+import Child from "components/Child";
+import OtherChild from "components/OtherChild";
 
 const App = () => {
-	const [data, setData] = useState("");
-
-	useEffect(() => {
-		setData();
-	}, []);
+	// const [name, setName] = useState("test");
 
 	return (
 		<>
-			<Example name={data} />
+			<Child />
+			<OtherChild />
 		</>
 	);
 };
 
 export default App;
+
+// <StateContext.Provider state={name}>
+// 	<OtherChild />
+// </StateContext.Provider>
+
+// <label>
+// 	State :
+// 	<input
+// 		type="text"
+// 		onChange={(e) => setName(e.target.value)}
+// 		placeholder="Looking for name?"
+// 	/>
+// </label>
